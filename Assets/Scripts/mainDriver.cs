@@ -6,6 +6,7 @@ using System;
 using Emgu;
 using Emgu.CV;
 using Emgu.CV.Structure;
+using UnityEngine.UI;
 public class mainDriver : MonoBehaviour
 {
     private InterfaceDBM interfaceDBM = null;
@@ -13,10 +14,10 @@ public class mainDriver : MonoBehaviour
     void Start()
     {
         interfaceDBM = (InterfaceDBM)GameObject.Find("Driver").GetComponent(typeof(InterfaceDBM));
-
         CvInvoke.UseOpenCL = false;
         _capture1 = new VideoCapture(0);
 
+        //GameObject.Find("UpperChosenColor").GetComponent<Image>().color = new Color32(255, 0, 0, 255);
         interfaceDBM.updateCameraList();
         interfaceDBM.setColorSpace(1, hue: 100, sat:50);
         
