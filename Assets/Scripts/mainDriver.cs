@@ -19,9 +19,10 @@ public class mainDriver : MonoBehaviour
 
         //GameObject.Find("UpperChosenColor").GetComponent<Image>().color = new Color32(255, 0, 0, 255);
         interfaceDBM.updateCameraList();
-        interfaceDBM.setColorSpace(1, hue: 100, sat:50);
-        
-        Debug.Log(interfaceDBM.getColorParam(1, 1));
+        interfaceDBM.setColorSpace(0, hue: 60, sat:255, val:255);
+        interfaceDBM.setColorSpace(1, hue: 120, sat: 255, val: 255);
+
+        //Debug.Log(interfaceDBM.getColorParam(1, 1));
     }
 
     // Update is called once per frame
