@@ -13,8 +13,6 @@ public class CameraddScript : MonoBehaviour
 
         cameraList = interfaceDBM.getCameraList();
         this.gameObject.GetComponent<Dropdown>().AddOptions(cameraList);
-
-
     }
 
     // Update is called once per frame

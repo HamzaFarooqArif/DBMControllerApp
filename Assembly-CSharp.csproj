@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\EModules\Auto-Save\AutoSave.cs" />
+     <Compile Include="Assets\Scripts\btnStartCapture.cs" />
      <Compile Include="Assets\Scripts\CameraddScript.cs" />
      <Compile Include="Assets\Scripts\ChosenColorScript.cs" />
      <Compile Include="Assets\Scripts\InterfaceDBM.cs" />

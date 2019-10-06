@@ -33,12 +33,12 @@ public class mainDriver : MonoBehaviour
 
     private void ProcessFrame()
     {
-        Image<Bgr, byte> frame1 = _capture1.QueryFrame().ToImage<Bgr, byte>();
-        Image<Bgr, Byte> frame1Copy = frame1.Clone();
-        frame1Copy._SmoothGaussian(11);
-        Image<Hsv, byte> frame1HSV = frame1Copy.Convert<Hsv, byte>();
+        //Image<Bgr, byte> frame1 = _capture1.QueryFrame().ToImage<Bgr, byte>();
+        //Image<Bgr, Byte> frame1Copy = frame1.Clone();
+        //frame1Copy._SmoothGaussian(11);
+        //Image<Hsv, byte> frame1HSV = frame1Copy.Convert<Hsv, byte>();
 
-        CvInvoke.Imshow("Frame", frame1HSV);
+        //CvInvoke.Imshow("Frame", frame1HSV);
     }
 
     void OnApplicationQuit()

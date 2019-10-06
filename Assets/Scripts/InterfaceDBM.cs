@@ -5,6 +5,8 @@ using UnityEngine;
 public class InterfaceDBM : MonoBehaviour
 {
     private static List<string> cameraList;
+    public int selectedCamera1Idx;
+    public int selectedCamera2Idx;
     private List<float> upperColor1;
     private List<float> lowerColor1;
     private List<float> upperColor2;
@@ -34,6 +36,8 @@ public class InterfaceDBM : MonoBehaviour
         List<string> result = cameraList;
         return result;
     }
+    
+
     //Colorspace Functions---------------------------------------------------------------------
 
     private bool constructColorSpace()
@@ -182,5 +186,19 @@ public class InterfaceDBM : MonoBehaviour
             }
         }
         return result;
+    }
+
+    public GameObject getSibling(GameObject currentObj, string siblingName)
+    {
+        Transform trans = currentObj.transform.parent.transform;
+        Transform childTrans = trans.Find(siblingName);
+        if (childTrans != null)
+        {
+            return childTrans.gameObject;
+        }
+        else
+        {
+            return null;
+        }
     }
 }
