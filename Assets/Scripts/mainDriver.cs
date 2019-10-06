@@ -14,7 +14,7 @@ public class mainDriver : MonoBehaviour
     Thread t1;
     Thread t2;
 
-    VideoCapture Capture1;
+    //VideoCapture Capture1;
 
     //private VideoCapture _capture1 = null;
     void Start()
@@ -25,7 +25,7 @@ public class mainDriver : MonoBehaviour
         //t2 = new Thread(ProcessFrame2);
 
 
-        Capture1 = new VideoCapture(0);
+        //Capture1 = new VideoCapture(0);
 
         //GameObject.Find("UpperChosenColor").GetComponent<Image>().color = new Color32(255, 0, 0, 255);
         //interfaceDBM.updateCameraList();
@@ -39,6 +39,7 @@ public class mainDriver : MonoBehaviour
     void Update()
     {
         ProcessFrame1();
+        ProcessFrame2();
     }
 
     private void ProcessFrame1()
@@ -46,7 +47,7 @@ public class mainDriver : MonoBehaviour
         
         if (interfaceDBM.Capture1 != null)
         {
-            Image<Bgr, byte> frame1 = Capture1.QueryFrame().ToImage<Bgr, byte>();//interfaceDBM.Capture1.QueryFrame().ToImage<Bgr, byte>();
+            Image<Bgr, byte> frame1 = interfaceDBM.Capture1.QueryFrame().ToImage<Bgr, byte>();//interfaceDBM.Capture1.QueryFrame().ToImage<Bgr, byte>();
             Image<Bgr, Byte> frame1Copy = frame1.Clone();
             frame1Copy._SmoothGaussian(11);
             Image<Hsv, byte> frame1HSV = frame1Copy.Convert<Hsv, byte>();
@@ -67,7 +68,7 @@ public class mainDriver : MonoBehaviour
     {
         if (interfaceDBM.Capture2 != null)
         {
-            Image<Bgr, byte> frame2 = interfaceDBM.Capture1.QueryFrame().ToImage<Bgr, byte>();
+            Image<Bgr, byte> frame2 = interfaceDBM.Capture2.QueryFrame().ToImage<Bgr, byte>();
             Image<Bgr, Byte> frame2Copy = frame2.Clone();
             frame2Copy._SmoothGaussian(11);
             Image<Hsv, byte> frame2HSV = frame2Copy.Convert<Hsv, byte>();
