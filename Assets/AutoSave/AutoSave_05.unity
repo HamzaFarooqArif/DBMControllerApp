@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 16121276}
   - component: {fileID: 16121275}
   - component: {fileID: 16121274}
+  - component: {fileID: 16121277}
   m_Layer: 5
   m_Name: btnStartCapture
   m_TagString: Untagged
@@ -388,6 +389,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16121272}
   m_CullTransparentMesh: 0
+--- !u!114 &16121277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16121272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4875a26a60be787499a071c01f9ddaa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &114936822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25eac863523ed3340b7f7bbf40a29b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCamera1Idx: 0
+  selectedCamera2Idx: 0
+  cam1Preview: 0
+  cam2Preview: 0
 --- !u!114 &356426047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1820,7 +1837,7 @@ GameObject:
   - component: {fileID: 569772033}
   - component: {fileID: 569772036}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: CameraList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5355,7 +5372,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Preview
+  m_Text: Toggle Preview
 --- !u!222 &1403489721
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7127,6 +7144,7 @@ GameObject:
   - component: {fileID: 1824224867}
   - component: {fileID: 1824224866}
   - component: {fileID: 1824224865}
+  - component: {fileID: 1824224868}
   m_Layer: 5
   m_Name: btnPreview
   m_TagString: Untagged
@@ -7189,7 +7207,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1824224866}
   m_OnClick:
     m_PersistentCalls:
@@ -7233,6 +7251,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824224863}
   m_CullTransparentMesh: 0
+--- !u!114 &1824224868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824224863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56616d284fc8f2045bd2afa7878054df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1881813594
 GameObject:
   m_ObjectHideFlags: 0

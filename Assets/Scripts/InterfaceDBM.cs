@@ -2,16 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Emgu.CV;
 public class InterfaceDBM : MonoBehaviour
 {
     private static List<string> cameraList;
     public int selectedCamera1Idx;
     public int selectedCamera2Idx;
+    public VideoCapture Capture1;
+    public VideoCapture Capture2;
+    public bool cam1Preview;
+    public bool cam2Preview;
     private List<float> upperColor1;
     private List<float> lowerColor1;
     private List<float> upperColor2;
     private List<float> lowerColor2;
 
+    void Start()
+    {
+        selectedCamera1Idx = -1;
+        selectedCamera2Idx = -1;
+    }
     //Camera Functions---------------------------------------------------------------------
     public bool updateCameraList()
     {
@@ -36,8 +46,6 @@ public class InterfaceDBM : MonoBehaviour
         List<string> result = cameraList;
         return result;
     }
-    
-
     //Colorspace Functions---------------------------------------------------------------------
 
     private bool constructColorSpace()

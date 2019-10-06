@@ -21,16 +21,31 @@ public class btnStartCapture : MonoBehaviour
         {
             if (this.gameObject.transform.parent.name.Equals("CameraProperties1"))
             {
-                interfaceDBM.selectedCamera1Idx = dd.value;
-                //Debug.Log("Cam1Idx: " + interfaceDBM.selectedCamera1Idx);
+                interfaceDBM.selectedCamera1Idx = dd.value - 1;
+                if (interfaceDBM.selectedCamera1Idx == interfaceDBM.selectedCamera2Idx)
+                {
+                    interfaceDBM.Capture1 = interfaceDBM.Capture2;
+                }
+                else
+                {
+                    interfaceDBM.Capture1 = new Emgu.CV.VideoCapture(interfaceDBM.selectedCamera1Idx);
+                }
             }
             else if (this.gameObject.transform.parent.name.Equals("CameraProperties2"))
             {
-                interfaceDBM.selectedCamera2Idx = dd.value;
-                //Debug.Log("Cam2Idx: "+ interfaceDBM.selectedCamera2Idx);
+                interfaceDBM.selectedCamera2Idx = dd.value - 1;
+                if (interfaceDBM.selectedCamera1Idx == interfaceDBM.selectedCamera2Idx)
+                {
+                    interfaceDBM.Capture2 = interfaceDBM.Capture1;
+                }
+                else
+                {
+                    interfaceDBM.Capture2 = new Emgu.CV.VideoCapture(interfaceDBM.selectedCamera2Idx);
+                }
             }
             dd.interactable = false;
             this.gameObject.GetComponent<Button>().interactable = false;
+            interfaceDBM.getSibling(this.gameObject, "btnPreview").GetComponent<Button>().interactable = true;
         }
         else
         {
