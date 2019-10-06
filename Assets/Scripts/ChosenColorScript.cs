@@ -15,15 +15,23 @@ public class ChosenColorScript : MonoBehaviour
     void Update()
     {
         List<float> hsv = null;
-        if (transform.parent.name.Equals("ColorPickerUpper"))
+        if (transform.parent.name.Equals("ColorPickerUpper1"))
         {
-            hsv = interfaceDBM.getColor(1);
+            hsv = interfaceDBM.getColor(0, 1);
         }
-        else if(transform.parent.name.Equals("ColorPickerLower"))
+        else if(transform.parent.name.Equals("ColorPickerLower1"))
         {
-            hsv = interfaceDBM.getColor(0);
+            hsv = interfaceDBM.getColor(0, 0);
         }
-        if(hsv != null)
+        else if (transform.parent.name.Equals("ColorPickerUpper2"))
+        {
+            hsv = interfaceDBM.getColor(1, 1);
+        }
+        else if (transform.parent.name.Equals("ColorPickerLower2"))
+        {
+            hsv = interfaceDBM.getColor(1, 0);
+        }
+        if (hsv != null)
         {
             Color clr = Color.HSVToRGB(hsv[0] / 255, hsv[1] / 255, hsv[2] / 255);
             this.gameObject.GetComponent<Image>().color = clr;

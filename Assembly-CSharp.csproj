@@ -53,11 +53,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EModules\Auto-Save\AutoSave.cs" />
+     <Compile Include="Assets\Scripts\CameraddScript.cs" />
      <Compile Include="Assets\Scripts\ChosenColorScript.cs" />
      <Compile Include="Assets\Scripts\InterfaceDBM.cs" />
      <Compile Include="Assets\Scripts\mainDriver.cs" />
      <Compile Include="Assets\Scripts\SliderScript.cs" />
      <Compile Include="Assets\Scripts\TextBoxScript.cs" />
+     <None Include="Assets\EModules\Auto-Save\ReadMe.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/Acer/Documents/DBMControllerApp/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

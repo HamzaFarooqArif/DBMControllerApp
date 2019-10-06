@@ -16,34 +16,64 @@ public class SliderScript : MonoBehaviour
     }
     public void ValueChangeCheck()
     {
-        if (this.transform.parent.parent.name.Equals("ColorPickerUpper"))
+        if (this.transform.parent.parent.name.Equals("ColorPickerUpper1"))
         {
             if (this.transform.name.Equals("HueSlider"))
             {
-                interfaceDBM.setColorSpace(1, hue: (int)slider.value);
+                interfaceDBM.setColorSpace(0, 1, hue: (int)slider.value);
             }
             else if (this.transform.name.Equals("SaturationSlider"))
             {
-                interfaceDBM.setColorSpace(1, sat: (int)slider.value);
+                interfaceDBM.setColorSpace(0, 1, sat: (int)slider.value);
             }
             else if (this.transform.name.Equals("ValueSlider"))
             {
-                interfaceDBM.setColorSpace(1, val: (int)slider.value);
+                interfaceDBM.setColorSpace(0, 1, val: (int)slider.value);
             }
         }
-        else if (this.transform.parent.parent.name.Equals("ColorPickerLower"))
+        else if (this.transform.parent.parent.name.Equals("ColorPickerLower1"))
         {
             if (this.transform.name.Equals("HueSlider"))
             {
-                interfaceDBM.setColorSpace(0, hue: (int)slider.value);
+                interfaceDBM.setColorSpace(0, 0, hue: (int)slider.value);
             }
             else if (this.transform.name.Equals("SaturationSlider"))
             {
-                interfaceDBM.setColorSpace(0, sat: (int)slider.value);
+                interfaceDBM.setColorSpace(0, 0, sat: (int)slider.value);
             }
             else if (this.transform.name.Equals("ValueSlider"))
             {
-                interfaceDBM.setColorSpace(0, val: (int)slider.value);
+                interfaceDBM.setColorSpace(0, 0, val: (int)slider.value);
+            }
+        }
+        else if (this.transform.parent.parent.name.Equals("ColorPickerUpper2"))
+        {
+            if (this.transform.name.Equals("HueSlider"))
+            {
+                interfaceDBM.setColorSpace(1, 1, hue: (int)slider.value);
+            }
+            else if (this.transform.name.Equals("SaturationSlider"))
+            {
+                interfaceDBM.setColorSpace(1, 1, sat: (int)slider.value);
+            }
+            else if (this.transform.name.Equals("ValueSlider"))
+            {
+                interfaceDBM.setColorSpace(1, 1, val: (int)slider.value);
+            }
+        }
+        else if (this.transform.parent.parent.name.Equals("ColorPickerLower2"))
+        {
+            if (this.transform.name.Equals("HueSlider"))
+            {
+                interfaceDBM.setColorSpace(1, 0, hue: (int)slider.value);
+            }
+            else if (this.transform.name.Equals("SaturationSlider"))
+            {
+                interfaceDBM.setColorSpace(1, 0, sat: (int)slider.value);
+            }
+            else if (this.transform.name.Equals("ValueSlider"))
+            {
+                interfaceDBM.setColorSpace(1, 0, val: (int)slider.value);
             }
         }
     }
@@ -51,34 +81,64 @@ public class SliderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.transform.parent.parent.name.Equals("ColorPickerUpper"))
+        if(this.transform.parent.parent.name.Equals("ColorPickerUpper1"))
         {
             if(this.transform.name.Equals("HueSlider"))
             {
-                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(1)[0];
+                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(0, 1)[0];
             }
             else if (this.transform.name.Equals("SaturationSlider"))
             {
-                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(1)[1];
+                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(0, 1)[1];
             }
             else if (this.transform.name.Equals("ValueSlider"))
             {
-                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(1)[2];
+                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(0, 1)[2];
             }
         }
-        else if (this.transform.parent.parent.name.Equals("ColorPickerLower"))
+        else if (this.transform.parent.parent.name.Equals("ColorPickerLower1"))
         {
             if (this.transform.name.Equals("HueSlider"))
             {
-                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(0)[0];
+                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(0, 0)[0];
             }
             else if (this.transform.name.Equals("SaturationSlider"))
             {
-                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(0)[1];
+                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(0, 0)[1];
             }
             else if (this.transform.name.Equals("ValueSlider"))
             {
-                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(0)[2];
+                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(0, 0)[2];
+            }
+        }
+        else if (this.transform.parent.parent.name.Equals("ColorPickerUpper2"))
+        {
+            if (this.transform.name.Equals("HueSlider"))
+            {
+                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(1, 1)[0];
+            }
+            else if (this.transform.name.Equals("SaturationSlider"))
+            {
+                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(1, 1)[1];
+            }
+            else if (this.transform.name.Equals("ValueSlider"))
+            {
+                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(1, 1)[2];
+            }
+        }
+        else if (this.transform.parent.parent.name.Equals("ColorPickerLower2"))
+        {
+            if (this.transform.name.Equals("HueSlider"))
+            {
+                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(1, 0)[0];
+            }
+            else if (this.transform.name.Equals("SaturationSlider"))
+            {
+                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(1, 0)[1];
+            }
+            else if (this.transform.name.Equals("ValueSlider"))
+            {
+                this.gameObject.GetComponent<Slider>().value = interfaceDBM.getColor(1, 0)[2];
             }
         }
     }
